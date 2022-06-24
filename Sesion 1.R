@@ -299,13 +299,17 @@ A
 
 #Ahora utilizaremos un conjunto de datos mas grande y la libreria ggplot2 para graficar
 library(ggplot2)
+
 #Accesamos a los datos "diamonds" de la libreria ggplot2
 data("diamonds")
 diamonds
+
 #Para ver los primeros 6 renglones
 head(diamonds)
+
 #Para ver los ultimos 6 rengloes
 tail(diamonds)
+
 #Para conocer las dimensiones del dataframe
 dim(diamonds)
 
@@ -321,8 +325,10 @@ summary(diamonds$price)
 #Podemos asignale el objeto a una variable 
 a<-summary(diamonds$price)
 a
+
 #y acceder a cada parametro
 a[3]
+
 #O tambien aplicar las funciones de manera individual: min(), max(), mean(),
 #median(),quantile() y podemos agregar #sd()
 quantile(diamonds$price,0.25)
@@ -343,11 +349,9 @@ cuadrado <- function(x){
 }
 cuadrado(2)
 
-
 #Otra forma de accesar a una columa es por su posicion
 diamonds[[7]]
 diamonds$price
-
 
 #Crear variable normalizada de precio
 diamonds$normalizedprice<-(diamonds$price - mean(diamonds$price))/sd(diamonds$price)
@@ -438,7 +442,7 @@ plot(price ~ carat, data = diamonds, main="Ejemplo",
 #Guardar la grafica en archivo dos opciones:
 #A) Directamente Plots->Export->PDF o Imagen
 
-#B)
+#B) Con las siguientes instrucciones
 #1 Generar el archivo
 pdf("rplot.pdf") 
 #2. Crear la grafica
@@ -501,7 +505,6 @@ plot(data1$Population,data1$Spending)
 
 #Podemos personaliza el diagrama de dispersion
 plot(data1$Population,data1$Spending,main='Diagrama de dispersion',xlab="Population",ylab='Spending',col = "red")
-
 
 y<-data1$Spending
 x<-data1$Population
